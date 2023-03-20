@@ -28,6 +28,7 @@ namespace Taskher
         private void CloseLabel_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Close();
+            //аыка
         }
     }
 }
