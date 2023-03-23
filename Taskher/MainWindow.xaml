@@ -35,6 +35,8 @@
                     Name="ActivTasksPanel"
                     Margin="10">
 
+                    <local:MyTask/>
+
                 </WrapPanel>
             </ScrollViewer>
 

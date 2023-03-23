@@ -22,6 +22,44 @@ namespace Taskher
         public MyTask()
         {
             InitializeComponent();
+
+            EditMyTask(true);
+        }
+
+        private void Title_Loaded(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            TitleMask.Width = textBox.ActualWidth;
+        }
+
+        private void Title_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            TitleMask.Width = textBox.ActualWidth;
+        }
+
+        private void MyTaskBorder_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            BorderMask.Width = MyTaskBorder.ActualWidth;
+            BorderMask.Height = MyTaskBorder.ActualHeight;
+        }
+
+        private void EditMyTask(bool isEdit)
+        {
+            if (isEdit)
+            {
+                Background = new SolidColorBrush(Colors.WhiteSmoke);
+                Title.IsReadOnly = false;
+                Text.IsReadOnly = false;
+                Title.Focus();
+            }
+            else
+            {
+                Title.IsReadOnly = true;
+                Text.IsReadOnly = true;
+                Background = new SolidColorBrush(Colors.White);
+            }
+            
         }
     }
 }
