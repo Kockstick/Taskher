@@ -11,7 +11,8 @@
         BorderBrush="Black"
         BorderThickness="5"
         Background="White"
-        SizeChanged="MyTaskBorder_SizeChanged">
+        SizeChanged="MyTaskBorder_SizeChanged"
+        Margin="10">
 
     <Border.OpacityMask>
         <VisualBrush>
@@ -29,6 +30,10 @@
     </Border.OpacityMask>
 
     <Grid>
+
+        <Thumb
+            Opacity="0"
+            MouseDoubleClick="Complete_MouseDoubleClick"/>
 
         <Border
             HorizontalAlignment="Left"
@@ -54,7 +59,7 @@
                 x:Name="Title"
                 Text="Title"
                 Padding="10,0,10,0"
-                Margin="0,0,15,0"
+                Margin="0,0,50,0"
                 Height="40"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
@@ -63,12 +68,42 @@
                 Background="LightGray"
                 BorderThickness="0"
                 Loaded="Title_Loaded"
-                TextChanged="Title_TextChanged"/>
+                TextChanged="Title_TextChanged"
+                 MouseDoubleClick="Complete_MouseDoubleClick"/>
         </Border>
+
+        <Image
+            x:Name="EditImage"
+            Tag="edit"
+            Visibility="Visible"
+            Source="/Resourse/editImg.png"
+            Width="15"
+            Margin="10"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Cursor="Hand"
+            MouseDown="EditImage_MouseDown"
+            MouseEnter="EditImage_MouseEnter"
+            MouseLeave="EditImage_MouseLeave"/>
+        
+        <Image
+            x:Name="EndEditImage"
+            Tag="complete"
+            Visibility="Hidden"
+            Width="20"
+            Margin="10"
+            Source="/Resourse/EndEditImg.png"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Cursor="Hand"
+            MouseDown="EditImage_MouseDown"
+            MouseEnter="EditImage_MouseEnter"
+            MouseLeave="EditImage_MouseLeave"/>
+
 
         <TextBox
             Name="Text"
-            Text="4845454h 4bg 5rb"
+            Text="text"
             Margin="10,50,10,30"
             BorderThickness="0"
             IsReadOnly="True"
@@ -77,6 +112,7 @@
             VerticalAlignment="Stretch"
             HorizontalAlignment="Stretch"
             VerticalContentAlignment="Top"
-            HorizontalContentAlignment="Left"/>
+            HorizontalContentAlignment="Left"
+            MouseDoubleClick="Complete_MouseDoubleClick"/>
     </Grid>
 </Border>

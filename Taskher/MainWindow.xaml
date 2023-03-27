@@ -35,9 +35,15 @@
                     Name="ActivTasksPanel"
                     Margin="10">
 
-                    <local:MyTask/>
-
                 </WrapPanel>
+            </ScrollViewer>
+
+            <ScrollViewer
+                Grid.Column="1">
+                <StackPanel
+                    Name="CompletedTasks"/>
+
+
             </ScrollViewer>
 
             <Label
@@ -53,6 +59,37 @@
                 HorizontalContentAlignment="Center"
                 Background="LightPink"
                 MouseDown="CloseLabel_MouseDown"/>
+
+            <Border
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Left"
+                Width="50"
+                Height="50"
+                Margin="15">
+
+                <Border.OpacityMask>
+                    <VisualBrush>
+                        <VisualBrush.Visual>
+                            <Border CornerRadius="20" Height="50" Width="50" Background="White"/>
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </Border.OpacityMask>
+
+                <Label
+                    x:Name="AddLabel"
+                    Grid.Column="0"
+                    Content="+"
+                    FontSize="30"
+                    FontWeight="ExtraBold"
+                    VerticalContentAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    Background="LightGreen"
+                    Cursor="Hand"
+                    MouseDown="AddMyTask_MouseDown"
+                    MouseEnter="Scale_MouseEnter"
+                    MouseLeave="Scale_MouseLeave"/>
+            </Border>
+            
         </Grid>
     </Border>
 </Window>
